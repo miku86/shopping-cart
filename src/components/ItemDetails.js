@@ -3,6 +3,11 @@ import { Card, Button } from 'react-bootstrap';
 
 class ItemDetails extends Component {
   render() {
+    const text = {
+      buttonShow: 'Show Items',
+      buttonHide: 'Hide Items',
+    };
+
     const items = [
       {
         title: '15-inch MacBook Pro',
@@ -18,7 +23,7 @@ class ItemDetails extends Component {
 
     return (
       <Card style={{ width: '18rem' }}>
-        <Button variant="dark">Show Items</Button>
+        <Button variant="dark">{text.buttonShow}</Button>
         {items.map((item) => {
           return (
             <Card.Body>
