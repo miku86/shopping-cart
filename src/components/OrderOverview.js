@@ -6,7 +6,7 @@ class OrderOverview extends Component {
     const data = {
       subTotal: 100.0,
       pickupSavings: -3.95,
-      mailingFees: 5.0,
+      taxes: 5.0,
     };
 
     const format = (input) => `${input.toFixed(2)} €`;
@@ -22,18 +22,30 @@ class OrderOverview extends Component {
             <p>{format(data.subTotal)}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p>Pickup Savings:</p>
+            <p
+              title="If you pickup your order at a nearby store, you save delivery costs"
+              style={{
+                textDecoration: 'underline #666 dashed',
+              }}
+            >
+              Pickup Savings:
+            </p>
             <p>{format(data.pickupSavings)}</p>
           </ListGroupItem>
           <ListGroupItem>
-            <p>Mailing Fees: </p>
-            <p>{format(data.mailingFees)}</p>
+            <p
+              title="The taxes you have to pay to the government"
+              style={{
+                textDecoration: 'underline #666 dashed',
+              }}
+            >
+              Taxes:{' '}
+            </p>
+            <p>{format(data.taxes)}</p>
           </ListGroupItem>
           <ListGroupItem style={{ fontWeight: 700 }}>
             <p>Total:</p>
-            <p>
-              {format(data.subTotal + data.pickupSavings + data.mailingFees)}
-            </p>
+            <p>{format(data.subTotal + data.pickupSavings + data.taxes)}</p>
           </ListGroupItem>
         </ListGroup>
       </Card>
