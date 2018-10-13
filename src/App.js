@@ -5,12 +5,20 @@ import ItemDetails from './components/ItemDetails';
 import PromoCode from './components/PromoCode';
 
 class App extends Component {
+  state = {
+    promoCode: '',
+  };
+
+  handleSubmit = (promoCode) => {
+    this.setState({ promoCode });
+  };
+
   render() {
     return (
       <div className="App">
-        <OrderOverview />
+        <OrderOverview promoCode={this.state.promoCode} />
         <ItemDetails />
-        <PromoCode />
+        <PromoCode handleSubmit={this.handleSubmit} />
       </div>
     );
   }

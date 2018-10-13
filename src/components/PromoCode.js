@@ -5,6 +5,7 @@ import PromoCardShown from './PromoCardShown';
 class PromoCode extends Component {
   state = {
     promoCodeIsShown: false,
+    promoCode: '',
   };
 
   handleClick = () => {
@@ -15,7 +16,10 @@ class PromoCode extends Component {
 
   render() {
     return this.state.promoCodeIsShown ? (
-      <PromoCardShown handleClick={this.handleClick} />
+      <PromoCardShown
+        handleClick={this.handleClick}
+        handleSubmit={this.props.handleSubmit}
+      />
     ) : (
       <PromoCardHidden handleClick={this.handleClick} />
     );

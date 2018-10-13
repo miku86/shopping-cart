@@ -3,7 +3,13 @@ import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class OrderOverview extends Component {
   state = {
-    promoCodeActivated: false,
+    promoCode: this.props.promoCode,
+  };
+
+  componentDidMount = () => {
+    this.setState({
+      promoCode: this.props.promoCode,
+    });
   };
 
   format = (input) => `${input.toFixed(2)} €`;
@@ -13,7 +19,7 @@ class OrderOverview extends Component {
       subTotal: 2000.0,
       pickupSavings: -3.95,
       taxes: 2000 * 0.2,
-      promo: -100,
+      promo: -200,
     };
 
     return (
@@ -48,7 +54,7 @@ class OrderOverview extends Component {
             </p>
             <p>{this.format(data.taxes)}</p>
           </ListGroupItem>
-          {this.state.promoCodeActivated ? (
+          {this.props.promoCode === '10%' ? (
             <ListGroupItem>
               <p>Promo Code:</p>
               <p>{this.format(data.promo)}</p>
