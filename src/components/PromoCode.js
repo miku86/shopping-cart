@@ -24,7 +24,7 @@ class PromoCode extends Component {
     if (this.state.promoCodeIsShown) {
       return (
         <Card style={{ width: '18rem' }}>
-          <Button variant="dark" onClick={this.handleClick}>
+          <Button variant="primary" size="sm" onClick={this.handleClick}>
             {text.buttonHide}
           </Button>
           <Card.Body>
@@ -39,7 +39,7 @@ class PromoCode extends Component {
                     aria-label={text.input}
                   />
                 </InputGroup>
-                <Button variant="primary" size="sm">
+                <Button variant="warning" size="sm">
                   {text.buttonSubmit}
                 </Button>
               </Card.Body>
@@ -50,7 +50,7 @@ class PromoCode extends Component {
     } else {
       return (
         <Card style={{ width: '18rem' }}>
-          <Button variant="dark" onClick={this.handleClick}>
+          <Button variant="primary" size="sm" onClick={this.handleClick}>
             {text.buttonShow}
           </Button>
         </Card>

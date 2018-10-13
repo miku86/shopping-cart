@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { Card, Button } from 'react-bootstrap';
 
 class ItemDetails extends Component {
+  state = {
+    itemsAreShown: false,
+  };
+
+  handleClick = () => {
+    this.setState({
+      itemsAreShown: !this.state.itemsAreShown,
+    });
+  };
+
   render() {
     const text = {
       buttonShow: 'Show Items',
@@ -21,9 +31,11 @@ class ItemDetails extends Component {
       },
     ];
 
-    return (
+    return this.state.itemsAreShown ? (
       <Card style={{ width: '18rem' }}>
-        <Button variant="dark">{text.buttonShow}</Button>
+        <Button variant="primary" size="sm" onClick={this.handleClick}>
+          {text.buttonHide}
+        </Button>
         {items.map((item) => {
           return (
             <Card.Body>
@@ -38,6 +50,12 @@ class ItemDetails extends Component {
             </Card.Body>
           );
         })}
+      </Card>
+    ) : (
+      <Card style={{ width: '18rem' }}>
+        <Button variant="primary" size="sm" onClick={this.handleClick}>
+          {text.buttonShow}
+        </Button>
       </Card>
     );
   }
