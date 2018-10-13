@@ -9,11 +9,11 @@ body {
 }
 
 #root {
-  height: 60vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 8px;
 }
 
 code {
