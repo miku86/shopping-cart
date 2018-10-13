@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { Card, Button, InputGroup, FormControl } from 'react-bootstrap';
 
 class PromoCardShown extends Component {
+  state = {
+    promoCode: '',
+  };
+
+  handleChange = (event) => {
+    this.setState({
+      promoCode: event.target.value,
+    });
+  };
+
   render() {
     const text = {
       title: 'Promo Code',
@@ -22,7 +32,12 @@ class PromoCardShown extends Component {
                 {text.title}
               </Card.Subtitle>
               <InputGroup className="mb-3">
-                <FormControl placeholder={text.input} aria-label={text.input} />
+                <FormControl
+                  placeholder={text.input}
+                  aria-label={text.input}
+                  onChange={this.handleChange}
+                  value={this.state.promoCode}
+                />
               </InputGroup>
               <Button variant="warning" size="sm">
                 {text.buttonSubmit}

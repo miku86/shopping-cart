@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class OrderOverview extends Component {
+  state = {
+    promoCodeActivated: false,
+  };
+
+  format = (input) => `${input.toFixed(2)} €`;
+
   render() {
     const data = {
-      subTotal: 100.0,
+      subTotal: 2000.0,
       pickupSavings: -3.95,
-      taxes: 5.0,
+      taxes: 2000 * 0.2,
+      promo: -100,
     };
-
-    const format = (input) => `${input.toFixed(2)} €`;
 
     return (
       <Card style={{ width: '18rem' }}>
@@ -19,7 +24,7 @@ class OrderOverview extends Component {
         <ListGroup className="list-group-flush">
           <ListGroupItem>
             <p>Subtotal:</p>
-            <p>{format(data.subTotal)}</p>
+            <p>{this.format(data.subTotal)}</p>
           </ListGroupItem>
           <ListGroupItem>
             <p
@@ -30,7 +35,7 @@ class OrderOverview extends Component {
             >
               Pickup Savings:
             </p>
-            <p>{format(data.pickupSavings)}</p>
+            <p>{this.format(data.pickupSavings)}</p>
           </ListGroupItem>
           <ListGroupItem>
             <p
@@ -41,11 +46,23 @@ class OrderOverview extends Component {
             >
               Taxes:{' '}
             </p>
-            <p>{format(data.taxes)}</p>
+            <p>{this.format(data.taxes)}</p>
           </ListGroupItem>
+          {this.state.promoCodeActivated ? (
+            <ListGroupItem>
+              <p>Promo Code:</p>
+              <p>{this.format(data.promo)}</p>
+            </ListGroupItem>
+          ) : (
+            ''
+          )}
           <ListGroupItem style={{ fontWeight: 700 }}>
             <p>Total:</p>
-            <p>{format(data.subTotal + data.pickupSavings + data.taxes)}</p>
+            <p>
+              {this.format(
+                data.subTotal + data.pickupSavings + data.taxes + data.promo,
+              )}
+            </p>
           </ListGroupItem>
         </ListGroup>
       </Card>
