@@ -3,29 +3,28 @@ import { Card, Button, InputGroup, FormControl } from 'react-bootstrap';
 
 class PromoCode extends Component {
   render() {
-    const item = {
+    const text = {
       title: 'Promo Code',
-      description:
-        'Apple MacBook Pro 15.4, Core i9-8950HK, 32GB RAM, 4TB SSD, Radeon Pro 560X',
+      input: 'Your Promo Code',
+      buttonShow: 'Show Promo Code',
+      buttonHide: 'Hide Promo Code',
+      buttonSubmit: ' Add Promo Code',
     };
 
     return (
       <Card style={{ width: '18rem' }}>
-        <Button variant="dark">Show Promo Code</Button>
+        <Button variant="dark">{text.buttonShow}</Button>
         <Card.Body>
           <Card>
             <Card.Body>
               <Card.Subtitle className="mb-2 text-muted">
-                {item.title}
+                {text.title}
               </Card.Subtitle>
               <InputGroup className="mb-3">
-                <FormControl
-                  placeholder="Your Promo Code"
-                  aria-label="Your Promo Code"
-                />
+                <FormControl placeholder={text.input} aria-label={text.input} />
               </InputGroup>
               <Button variant="primary" size="sm">
-                Add Promo Code
+                {text.buttonSubmit}
               </Button>
             </Card.Body>
           </Card>
