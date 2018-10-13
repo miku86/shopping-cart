@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'react-bootstrap';
 
-class CardShown extends Component {
+class ItemCardShown extends Component {
   render() {
     const text = {
       buttonHide: 'Hide Items',
@@ -44,4 +44,4 @@ class CardShown extends Component {
   }
 }
 
-export default CardShown;
+export default ItemCardShown;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CardShown from './CardShown';
-import CardHidden from './CardHidden';
+import ItemCardShown from './ItemCardShown';
+import ItemCardHidden from './ItemCardHidden';
 
 class ItemDetails extends Component {
   state = {
@@ -15,9 +15,9 @@ class ItemDetails extends Component {
 
   render() {
     return this.state.itemsAreShown ? (
-      <CardShown handleClick={this.handleClick} />
+      <ItemCardShown handleClick={this.handleClick} />
     ) : (
-      <CardHidden handleClick={this.handleClick} />
+      <ItemCardHidden handleClick={this.handleClick} />
     );
   }
 }
