@@ -13,10 +13,10 @@
   - [x] User can see a expander to show/hide item details
   - [x] User can see a expander to show/hide promo codes input
 
-- [ ] Identify Where Your State Should Live
+- [x] Identify Where Your State Should Live
 
 - [ ] Add State:
   - [ ] App.js
   - [ ] OrderOverview.js
-  - [ ] ItemDetails.js
+  - [x] ItemDetails.js
   - [ ] PromoCode.js
