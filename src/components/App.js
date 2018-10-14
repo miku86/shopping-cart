@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import OrderOverview from './components/OrderOverview';
-import ItemDetails from './components/ItemDetails';
-import PromoCode from './components/PromoCode';
+import OrderOverview from './OrderOverview';
+import ItemDetails from './ItemDetails';
+import PromoCode from './PromoCode';
 
 class App extends Component {
   state = {
