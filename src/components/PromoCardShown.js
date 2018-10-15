@@ -25,8 +25,8 @@ class PromoCardShown extends Component {
       title: 'Promo Code',
       desc: 'Type "10%" for 10% off',
       input: 'Your Promo Code',
-      buttonHide: 'Hide Promo Code',
-      buttonSubmit: ' Add Promo Code',
+      buttonHide: 'Hide Promo Code - ',
+      buttonSubmit: ' Add Promo Code +',
     };
 
     return (

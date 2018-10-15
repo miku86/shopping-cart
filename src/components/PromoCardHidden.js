@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 class PromoCardHidden extends Component {
   render() {
     const text = {
-      buttonShow: 'Show Promo Code',
+      buttonShow: 'Show Promo Code +',
     };
 
     return (

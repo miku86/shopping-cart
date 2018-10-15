@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 class ItemCardShown extends Component {
   render() {
     const text = {
-      buttonHide: 'Hide Items',
+      buttonHide: 'Hide Items -',
     };
 
     const items = [
